@@ -29,19 +29,18 @@ jobs:
       - name: Install KiCad
         run: |
           choco install --no-progress kicad
-          dir "C:\Program Files\KiCad\6.0\bin"
-          which python3
+          # dir "C:\Program Files\KiCad\6.0\bin"
+          # which python3
           # echo ${env:PATH}
           $env:PATH = "C:\Program Files\KiCad\6.0\bin;${env:PATH}"
           # echo dir env:
-          python --version
-          dir
-          python t1.py
+          # python --version
+          # dir
+          # python t1.py
           pip install wheel
           pip install kibot
           which kibot
-          which kibot.exe
-          kibot --help-outputs
+          kibot -vvvv --help-outputs
           kibot --version
 
       # Runs a set of commands using the runners shell
