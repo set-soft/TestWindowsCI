@@ -29,10 +29,11 @@ jobs:
       - name: Run a one-line script
         run: |
           choco install --no-progress kicad
-          dir "C:\Program Files"
-          which python
+          dir "C:\Program Files\KiCad"
           which python3
-          echo %PATH%
+          echo ${env:PATH}
+          dir env:
+          python3 --version
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
