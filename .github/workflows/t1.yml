@@ -47,11 +47,12 @@ jobs:
           @echo ************************************
           @echo * KiCad %kicadVersion% Command Prompt
           @echo ************************************
-          set _BIN_DIR="C:\Program Files\KiCad\6.0\bin\"
+          set _BIN_DIR=C:\Program Files\KiCad\6.0\bin\
           set _PYTHON_SCRIPTS_DIR=%_BIN_DIR%Scripts
           set PATH=%_BIN_DIR%;%_PYTHON_SCRIPTS_DIR%;%PATH%
           set PYTHONHOME=%_BIN_DIR%
-          @rem set PYTHONUTF8=1
+          @rem The following line generates No module named 'encodings'
+          set PYTHONUTF8=1
           echo You may now invoke python or pip targeting kicad's install
           cd /d %USERPROFILE%\Documents\KiCad\%kicadVersion%
           set _BIN_DIR=
