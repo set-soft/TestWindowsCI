@@ -36,7 +36,7 @@ jobs:
           @echo dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           @echo cmd /k "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
-          cmd /k "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
+          cmd /c "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
           @echo pip install --no-compile kibot
           pip install --no-compile kibot
           @echo pip install lxml
