@@ -55,6 +55,9 @@ jobs:
           # dir "C:\Program Files\KiCad\6.0\bin\Lib\site-packages\kibot"
           # cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+          sed -i "s/Program Files/program~1/" "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+          cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+          kibot --version
           # The following fails, most probably because the shebang has spaces
           # kibot -vvvv --help-outputs
           python "C:\Program Files\KiCad\6.0\bin\Scripts\kibot" -vvvv --help-outputs
