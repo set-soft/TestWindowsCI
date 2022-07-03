@@ -51,7 +51,7 @@ jobs:
           set _PYTHON_SCRIPTS_DIR=%_BIN_DIR%Scripts
           set PATH=%_BIN_DIR%;%_PYTHON_SCRIPTS_DIR%;%PATH%
           set PYTHONHOME=%_BIN_DIR%
-          set PYTHONUTF8=1
+          @rem set PYTHONUTF8=1
           echo You may now invoke python or pip targeting kicad's install
           cd /d %USERPROFILE%\Documents\KiCad\%kicadVersion%
           set _BIN_DIR=
