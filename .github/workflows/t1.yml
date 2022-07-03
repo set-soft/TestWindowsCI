@@ -75,10 +75,8 @@ jobs:
           @echo which python
           which python
 
-          cd
-          pwd
-          @echo pip install --no-compile .\KiBot\
-          pip install --no-compile .\KiBot\
+          @echo pip install --no-compile %USERPROFILE%\Documents\KiCad\%kicadVersion%\KiBot
+          pip install --no-compile %USERPROFILE%\Documents\KiCad\%kicadVersion%\KiBot
 
           @echo pip install lxml
           pip install lxml
