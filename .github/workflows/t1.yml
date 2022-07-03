@@ -35,16 +35,31 @@ jobs:
           choco install --no-progress kicad
           @echo dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
-          @echo cmd /k "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
-          cmd /c "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
+#          @echo cmd /k "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
+#          cmd /c "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
+          @echo KiCad command prompt inlined
+          for /f "USEBACKQ" %%a in (`powershell -NoProfile -Command ^(Get-Item "kicad.exe"^).VersionInfo.ProductVersion`) do set kicadVersion=%%a
+          @echo ************************************
+          @echo * KiCad %kicadVersion% Command Prompt
+          @echo ************************************
+          set _BIN_DIR=%~dp0
+          set _PYTHON_SCRIPTS_DIR=%_BIN_DIR%Scripts
+          set PATH=%_BIN_DIR%;%_PYTHON_SCRIPTS_DIR%;%PATH%
+          set PYTHONHOME=%_BIN_DIR%
+          set PYTHONUTF8=1
+          @echo You may now invoke python or pip targeting kicad's install
+          cd /d %USERPROFILE%\Documents\KiCad\%kicadVersion%
+          set _BIN_DIR=
+          set _PYTHON_SCRIPTS_DIR=
+          @rem end of KiCad script
+          @echo Missing dir: %USERPROFILE%\Documents\KiCad\%kicadVersion%
+          @echo kibot --version
           @echo pip install --no-compile kibot
           pip install --no-compile kibot
           @echo pip install lxml
           pip install lxml
           @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
           cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
-          @echo Missing dir: %USERPROFILE%\Documents\KiCad\%kicadVersion%
-          @echo kibot --version
           kibot --version
 #           # dir "C:\Program Files\KiCad\6.0\bin"
 #           # dir "C:\Program Files\KiCad\6.0\bin\Lib"
