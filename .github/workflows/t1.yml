@@ -50,12 +50,12 @@ jobs:
           # cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
           kibot -vvvv --help-outputs
-          "C:\Program Files\KiCad\6.0\bin\Scripts\kibot" -vvvv --help-outputs
           python "C:\Program Files\KiCad\6.0\bin\Scripts\kibot" -vvvv --help-outputs
           kibot --version
           # dir C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           # echo C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           # C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot -vvvv --help-outputs
+          C:\Program Files\KiCad\6.0\bin\Scripts\kibot -vvvv --help-outputs
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
