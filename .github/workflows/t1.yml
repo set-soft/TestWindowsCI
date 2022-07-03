@@ -34,6 +34,11 @@ jobs:
           @echo git clone https://github.com/INTI-CMNB/KiBot.git
           git clone https://github.com/INTI-CMNB/KiBot.git
 
+          @echo cat KiBot/setup.py
+          cat KiBot/setup.py
+
+          kibot --version
+
           @echo "choco install --no-progress kicad"
           choco install --no-progress kicad
 
