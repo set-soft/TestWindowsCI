@@ -59,7 +59,6 @@ jobs:
           set _PYTHON_SCRIPTS_DIR=
           @rem end of KiCad script
 
-          @echo Missing dir: %USERPROFILE%\Documents\KiCad\%kicadVersion%
           @echo PATH: %PATH%
 
           @echo python --version
@@ -79,6 +78,15 @@ jobs:
 
           @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
           cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+
+          @echo pip install PcbDraw
+          pip install PcbDraw
+
+          @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\pcbdraw"
+          cat "C:\Program Files\KiCad\6.0\bin\Scripts\pcbdraw"
+
+          @echo pcbdraw --help
+          pcbdraw --help
 
           kibot --version
 #           # dir "C:\Program Files\KiCad\6.0\bin"
