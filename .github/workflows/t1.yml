@@ -45,6 +45,7 @@ jobs:
           # which pip
           # python -m pip install wheel
           pip install --no-compile kibot
+          pip install lxml
           which kibot
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           dir "C:\Program Files\KiCad\6.0\bin\Lib\site-packages\kibot"
