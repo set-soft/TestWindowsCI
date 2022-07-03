@@ -47,7 +47,7 @@ jobs:
           pip install --no-compile kibot
           which kibot
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
-          dir "C:\Program Files\KiCad\6.0\bin\Lib\kibot"
+          dir "C:\Program Files\KiCad\6.0\bin\Lib\site-packages\kibot"
           # cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
           # The following fails, most probably because the shebang has spaces
