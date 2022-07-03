@@ -37,7 +37,8 @@ jobs:
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           # ls -la "/C/Program Files/KiCad/6.0/bin/Scripts"
           # which python3
-          # echo ${env:PATH}
+          cmd /k "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
+          echo ${env:PATH}
           $env:PATH = "C:\Program Files\KiCad\6.0\bin;C:\Program Files\KiCad\6.0\bin\Scripts;${env:PATH}"
           # export PATH="/C/Program Files/KiCad/6.0/bin:/C/Program Files/KiCad/6.0/bin/Scripts:$PATH"
           # echo dir env:
