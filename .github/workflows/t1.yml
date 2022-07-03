@@ -34,14 +34,6 @@ jobs:
           @echo git clone https://github.com/INTI-CMNB/KiBot.git
           git clone https://github.com/INTI-CMNB/KiBot.git
 
-          @echo cd KiBot
-          cd KiBot
-
-          @echo dir
-          dir
-
-
-
           @echo "choco install --no-progress kicad"
           choco install --no-progress kicad
 
@@ -78,17 +70,8 @@ jobs:
           @echo which python
           which python
 
-          @echo cd KiBot
-          cd KiBot
-
-          @echo pip install --no-compile .
-          pip install --no-compile .
-
-          @echo cd ..
-          cd ..
-
-          @echo Fail
-          hopus-pocus
+          @echo pip install --no-compile KiBot
+          pip install --no-compile KiBot
 
           @echo pip install lxml
           pip install lxml
