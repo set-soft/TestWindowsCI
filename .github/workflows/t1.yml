@@ -31,6 +31,9 @@ jobs:
         # shell: bash
         shell: cmd
         run: |
+          @echo git clone https://github.com/INTI-CMNB/KiBot.git
+          git clone https://github.com/INTI-CMNB/KiBot.git
+
           @echo "choco install --no-progress kicad"
           choco install --no-progress kicad
 
@@ -67,8 +70,14 @@ jobs:
           @echo which python
           which python
 
-          @echo pip install --no-compile kibot
-          pip install --no-compile kibot
+          @echo cd KiBot
+          cd KiBot
+
+          @echo pip install --no-compile .
+          pip install --no-compile .
+
+          @echo cd ..
+          cd ..
 
           @echo pip install lxml
           pip install lxml
@@ -76,17 +85,8 @@ jobs:
           @echo which kibot
           which kibot
 
-          @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
-          cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
-
-          @echo pip install PcbDraw
-          pip install PcbDraw
-
-          @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\pcbdraw"
-          cat "C:\Program Files\KiCad\6.0\bin\Scripts\pcbdraw"
-
-          @echo pcbdraw --help
-          pcbdraw --help
+          @echo dir "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+          dir "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
 
           kibot --version
 #           # dir "C:\Program Files\KiCad\6.0\bin"
