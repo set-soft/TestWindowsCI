@@ -33,10 +33,10 @@ jobs:
           # dir "C:\Program Files\KiCad\6.0\bin"
           # dir "C:\Program Files\KiCad\6.0\bin\Lib"
           # dir "C:\Program Files\KiCad\6.0\bin\scripting"
-          ls "/C/Program Files/KiCad/6.0/bin/Scripts"
+          ls -la "/C/Program Files/KiCad/6.0/bin/Scripts"
           # which python3
           # echo ${env:PATH}
-          $env:PATH = "C:\Program Files\KiCad\6.0\bin;C:\Program Files\KiCad\6.0\bin\Scripts;${env:PATH}"
+          # $env:PATH = "C:\Program Files\KiCad\6.0\bin;C:\Program Files\KiCad\6.0\bin\Scripts;${env:PATH}"
           export PATH="/C/Program Files/KiCad/6.0/bin:/C/Program Files/KiCad/6.0/bin/Scripts:$PATH"
           # echo dir env:
           # python --version
