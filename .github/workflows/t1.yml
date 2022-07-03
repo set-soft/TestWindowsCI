@@ -84,13 +84,8 @@ jobs:
           @echo which kibot
           which kibot
 
-          @echo dir "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
-          dir "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
-
-          @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
-          cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
-
           kibot --version
+          kibot -vvvv --help-outputs
 #           # dir "C:\Program Files\KiCad\6.0\bin"
 #           # dir "C:\Program Files\KiCad\6.0\bin\Lib"
 #           # dir "C:\Program Files\KiCad\6.0\bin\scripting"
