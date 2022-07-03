@@ -35,23 +35,23 @@ jobs:
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           # which python3
           # echo ${env:PATH}
-          $env:PATH = "C:\Program Files\KiCad\6.0\bin;${env:PATH}"
+          $env:PATH = "C:\Program Files\KiCad\6.0\bin;C:\Program Files\KiCad\6.0\bin\Scripts;${env:PATH}"
           # echo dir env:
           # python --version
           # dir
-          python t1.py
-          python -m pip install pip
+          # python t1.py
+          # python -m pip install pip
           # KiCad has pip as module, but not the script!!!
           # which pip
-          python -m pip install wheel
-          python -m pip install kibot
+          # python -m pip install wheel
+          pip install kibot
           which kibot
           # cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           kibot -vvvv --help-outputs
           kibot --version
-          dir C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
-          echo C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
-          C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot -vvvv --help-outputs
+          # dir C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
+          # echo C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
+          # C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot -vvvv --help-outputs
 
       # Runs a set of commands using the runners shell
       - name: Run a multi-line script
