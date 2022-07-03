@@ -27,17 +27,19 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Install KiCad
-        shell: bash
+        # The shebang is wrong for power shell and for bash
+        # shell: bash
         run: |
           choco install --no-progress kicad
           # dir "C:\Program Files\KiCad\6.0\bin"
           # dir "C:\Program Files\KiCad\6.0\bin\Lib"
           # dir "C:\Program Files\KiCad\6.0\bin\scripting"
-          ls -la "/C/Program Files/KiCad/6.0/bin/Scripts"
+          dir "C:\Program Files\KiCad\6.0\bin\Scripts"
+          # ls -la "/C/Program Files/KiCad/6.0/bin/Scripts"
           # which python3
           # echo ${env:PATH}
-          # $env:PATH = "C:\Program Files\KiCad\6.0\bin;C:\Program Files\KiCad\6.0\bin\Scripts;${env:PATH}"
-          export PATH="/C/Program Files/KiCad/6.0/bin:/C/Program Files/KiCad/6.0/bin/Scripts:$PATH"
+          $env:PATH = "C:\Program Files\KiCad\6.0\bin;C:\Program Files\KiCad\6.0\bin\Scripts;${env:PATH}"
+          # export PATH="/C/Program Files/KiCad/6.0/bin:/C/Program Files/KiCad/6.0/bin/Scripts:$PATH"
           # echo dir env:
           # python --version
           # dir
@@ -52,11 +54,11 @@ jobs:
           # dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           # dir "C:\Program Files\KiCad\6.0\bin\Lib\site-packages\kibot"
           # cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
-          # cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+          cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
           # The following fails, most probably because the shebang has spaces
           # kibot -vvvv --help-outputs
-          # python "C:\Program Files\KiCad\6.0\bin\Scripts\kibot" -vvvv --help-outputs
-          kibot --version
+          python "C:\Program Files\KiCad\6.0\bin\Scripts\kibot" -vvvv --help-outputs
+          # kibot --version
           # dir C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           # echo C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           # C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot -vvvv --help-outputs
