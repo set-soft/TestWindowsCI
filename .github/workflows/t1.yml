@@ -30,6 +30,9 @@ jobs:
         run: |
           choco install --no-progress kicad
           dir "C:\Program Files\KiCad\6.0\bin"
+          dir "C:\Program Files\KiCad\6.0\bin\Lib"
+          dir "C:\Program Files\KiCad\6.0\bin\scripting"
+          dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           # which python3
           # echo ${env:PATH}
           $env:PATH = "C:\Program Files\KiCad\6.0\bin;${env:PATH}"
@@ -43,7 +46,7 @@ jobs:
           python -m pip install wheel
           python -m pip install kibot
           which kibot
-          cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
+          # cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           kibot -vvvv --help-outputs
           kibot --version
           dir C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
