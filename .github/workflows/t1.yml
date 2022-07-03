@@ -33,10 +33,17 @@ jobs:
         run: |
           @echo "choco install --no-progress kicad"
           choco install --no-progress kicad
+
           @echo dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
+
+          # I can't make the definitions to survive
           #          @echo cmd /k "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
           #          cmd /c "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
+
+          @echo mkdir %USERPROFILE%\Documents\KiCad\%kicadVersion%
+          mkdir %USERPROFILE%\Documents\KiCad\%kicadVersion%
+
           @echo KiCad command prompt inlined
           for /f "USEBACKQ" %%a in (`powershell -NoProfile -Command ^(Get-Item "kicad.exe"^).VersionInfo.ProductVersion`) do set kicadVersion=%%a
           @echo ************************************
@@ -52,14 +59,28 @@ jobs:
           set _BIN_DIR=
           set _PYTHON_SCRIPTS_DIR=
           @rem end of KiCad script
+
           @echo Missing dir: %USERPROFILE%\Documents\KiCad\%kicadVersion%
-          @echo kibot --version
+          @echo PATH: %PATH%
+
+          @echo python --version
+          python --version
+
+          @echo which python
+          which python
+
           @echo pip install --no-compile kibot
           pip install --no-compile kibot
+
           @echo pip install lxml
           pip install lxml
+
+          @echo which kibot
+          which kibot
+
           @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
           cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+
           kibot --version
 #           # dir "C:\Program Files\KiCad\6.0\bin"
 #           # dir "C:\Program Files\KiCad\6.0\bin\Lib"
