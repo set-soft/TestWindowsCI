@@ -37,19 +37,17 @@ jobs:
           @echo dir "C:\Program Files\KiCad\6.0\bin\Scripts"
           dir "C:\Program Files\KiCad\6.0\bin\Scripts"
 
-          # I can't make the definitions to survive
-          #          @echo cmd /k "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
-          #          cmd /c "C:\Program Files\KiCad\6.0\bin\kicad-cmd.bat"
+          @echo set kicadVersion=6.0
+          set kicadVersion=6.0
 
           @echo mkdir %USERPROFILE%\Documents\KiCad\%kicadVersion%
           mkdir %USERPROFILE%\Documents\KiCad\%kicadVersion%
 
           @echo KiCad command prompt inlined
-          for /f "USEBACKQ" %%a in (`powershell -NoProfile -Command ^(Get-Item "kicad.exe"^).VersionInfo.ProductVersion`) do set kicadVersion=%%a
           @echo ************************************
           @echo * KiCad %kicadVersion% Command Prompt
           @echo ************************************
-          set _BIN_DIR=%~dp0
+          set _BIN_DIR="C:\Program Files\KiCad\6.0\bin\"
           set _PYTHON_SCRIPTS_DIR=%_BIN_DIR%Scripts
           set PATH=%_BIN_DIR%;%_PYTHON_SCRIPTS_DIR%;%PATH%
           set PYTHONHOME=%_BIN_DIR%
