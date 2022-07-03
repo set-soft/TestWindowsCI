@@ -38,9 +38,10 @@ jobs:
           # dir
           python t1.py
           python -m pip install pip
-          which pip
-          pip install wheel
-          pip install kibot
+          # KiCad has pip as module, but not the script!!!
+          # which pip
+          python -m pip install wheel
+          python -m pip install kibot
           which kibot
           cat C:\hostedtoolcache\windows\Python\3.9.13\x64\Scripts\kibot
           kibot -vvvv --help-outputs
