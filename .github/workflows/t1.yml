@@ -82,6 +82,9 @@ jobs:
           @echo dir "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
           dir "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
 
+          @echo cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+          cat "C:\Program Files\KiCad\6.0\bin\Scripts\kibot"
+
           kibot --version
 #           # dir "C:\Program Files\KiCad\6.0\bin"
 #           # dir "C:\Program Files\KiCad\6.0\bin\Lib"
